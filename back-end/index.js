@@ -1,10 +1,13 @@
 import express from "express";
 import http from "http";
+import cors from "cors"
 import { AssistantController } from "./controller.js";
 
 const app = express();
 const server = http.createServer(app);
 const controller = new AssistantController()
+
+app.use(cors())
 
 app.get('/api/ia/music', async (req, res) => {
     const { music } = req.query;
