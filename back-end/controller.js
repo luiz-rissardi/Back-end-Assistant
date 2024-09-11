@@ -14,18 +14,22 @@ export class AssistantController {
     async init() {
         await this.#YTApi.initialize()
         this.modelIa = new GenerativeModel("AIzaSyCSZBcrAuX2xYMoUoM0e6duPvrjvFvJMyU",
-          {
-            model: "gemini-1.5-pro-exp-0801",
-            generationConfig: {
-              temperature: 1 // Ajuste a temperatura conforme necessário
+            {
+                model: "gemini-1.5-pro-exp-0801",
+                generationConfig: {
+                    temperature: 1 // Ajuste a temperatura conforme necessário
+                }
             }
-          }
         )
     }
 
     async getMusica(musicName) {
         const songs = await this.#YTApi.searchSongs(musicName);
         return songs
+    }
+
+    async getCommand() {
+
     }
 
     async #getResponse(input) {
