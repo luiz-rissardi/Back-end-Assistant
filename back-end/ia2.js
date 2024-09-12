@@ -1,62 +1,106 @@
 // Dataset de treinamento
 const trainingData = [
-    { command: "qual o clima ?", label: 0 },     // 0 = clima
+    // Classe 0 = Clima
+    { command: "qual o clima ?", label: 0 },
     { command: "como está o tempo ?", label: 0 },
+    { command: "como o tempo esta hoje?", label: 0 },
     { command: "de que maneira está o tempo ?", label: 0 },
     { command: "como está o tempo hoje?", label: 0 },
     { command: "de que maneira esta o clima hoje?", label: 0 },
     { command: "qual a temperatura ?", label: 0 },
     { command: "como esta o tempo?", label: 0 },
+    { command: "como esta o tempo hoje?", label: 0 },
     { command: "o dia esta bom hoje?", label: 0 },
     { command: "o dia esta bom para programar hoje ?", label: 0 },
     { command: "qual é a previsão para hoje ?", label: 0 },
+    { command: "qual a previsão para hoje ?", label: 0 },
 
-    { command: "tocar música", label: 1 },     // 1 = música
+    // Classe 1 = Música
+    { command: "tocar música", label: 1 },
     { command: "coloca uma playlist", label: 1 },
     { command: "quero ouvir música", label: 1 },
-    { command: "tocar musica a thunderstruck", label: 1 },
+    { command: "tocar a musica", label: 1 },
+    { command: "botar a musica thundersturck", label: 1 },
     { command: "som na faixa ", label: 1 },
+    { command: "tocar a musica dont stop beliven", label: 1 },
     { command: "som na faixa meu rei", label: 1 },
     { command: "tocar a banda acdc", label: 1 },
     { command: "bota minha playlist pra tocar", label: 1 },
     { command: "tocar a playlist de guardioes da galaxia", label: 1 },
     { command: "colocar a playlist de guardioes da galaxia", label: 1 },
+    { command: "som na faixa com a playlist do acdc", label: 1 },
     { command: "som na faixa na playlist do journey", label: 1 },
 
-    { command: "ligar a luz", label: 2 },      // 2 = Luz
-    { command: "acenda a luz", label: 2 },
-    { command: "acender a luz", label: 2 },
-    { command: "acender as luzes", label: 2 },
-    { command: "ativar a luz", label: 2 },
-    { command: "ligar todas as luzes", label: 2 },
-    { command: "acender todas as luzes", label: 2 },
-    { command: "ligar todas as lampadas", label: 2 },
-
-    { command: "desligar a luz", label: 3 },   // 3 = Desligar Luz
-    { command: "apagar a luz", label: 3 },
-    { command: "apagar a luz", label: 3 },
-    { command: "apagar as luzes", label: 3 },
-    { command: "desativar a luz", label: 3 },
-    { command: "desligar todas as luzes", label: 3 },
-    { command: "deligar as luzes", label: 3 },
-    { command: "desligar todas as luzes", label: 3 },
-
-    { command: "façfsdfa fdfsd coisa", label: 4 }, // no pattern
-    { command: "abrfsdfsda o nadvsdfsdvesd gadsdfor", label: 4 },
-    { command: "defindfa sdffdfsdfufm lembrffete", label: 4 },
-    { command: "verfsdfsdfdsdfffdsifiquffdsfef o e-mail", label: 4 },
-    { command: "façasdfsfsd uma pdsfsfesquidsffsa dsfa wefdfsdfb", label: 4 },
-    { command: "crie sdfudfsdfdfdm ledfsmbfdsfdfrete pfara amasdfsdfsdnhã", label: 4 },
-    { command: "inicffisdfdse o Ssdfpotify", label: 4 },
-    { command: "gersfe umdfsdfs relafsdfsdftório finsdfdsfanceiro", label: 4 },
-
+    // Classe 2 = Outros
+    { command: "faça qualquer coisa", label: 2 },
+    { command: "abra o navegador", label: 2 },
+    { command: "defina um lembrete", label: 2 },
+    { command: "verifique o e-mail", label: 2 },
+    { command: "faça uma pesquisa na web", label: 2 },
+    { command: "crie um lembrete para amanhã", label: 2 },
+    { command: "inicie o Spotify", label: 2 },
+    { command: "gere um relatório financeiro", label: 2 },
+    { command: "mostre a previsão do tempo para amanhã", label: 2 },
+    { command: "calcule a soma de 15 e 25", label: 2 },
+    { command: "crie um novo documento de texto", label: 2 },
+    { command: "envie uma mensagem para Ana", label: 2 },
+    { command: "abra o aplicativo de notas", label: 2 },
+    { command: "faça uma ligação para o João", label: 2 },
+    { command: "crie um evento no calendário para sexta-feira", label: 2 },
+    { command: "mostre as notícias do dia", label: 2 },
+    { command: "leia um livro para mim", label: 2 },
+    { command: "abra o Google Drive", label: 2 },
+    { command: "traduza este texto para inglês", label: 2 },
+    { command: "reproduza um podcast sobre tecnologia", label: 2 },
+    { command: "verifique se há atualizações do sistema", label: 2 },
+    { command: "atualize meu status no LinkedIn", label: 2 },
+    { command: "faça uma reserva em um restaurante italiano", label: 2 },
+    { command: "ajuste o brilho da tela para 50%", label: 2 },
+    { command: "quero que voce abra a calculadora e calcule 25 dividido por 9", label: 2 },
+    { command: "defina uma música como toque de chamada", label: 2 },
+    { command: "mostre a cotação do dólar para hoje", label: 2 },
+    { command: "agende uma reunião para amanhã às 10h", label: 2 },
+    { command: "ajuste o volume do sistema para 70%", label: 2 },
+    { command: "compartilhe um arquivo no Google Drive", label: 2 },
+    { command: "quero a abertura do aplicativo de receitas", label: 2 },
+    { command: "faça qualquer coisa", label: 2 },
+    { command: "abra o navegador", label: 2 },
+    { command: "defina um lembrete", label: 2 },
+    { command: "verifique o e-mail", label: 2 },
+    { command: "faça uma pesquisa na web", label: 2 },
+    { command: "crie um lembrete para amanhã", label: 2 },
+    { command: "inicie o Spotify", label: 2 },
+    { command: "gere um relatório financeiro", label: 2 },
+    { command: "mostre a previsão do tempo para amanhã", label: 2 },
+    { command: "calcule a soma de 15 e 25", label: 2 },
+    { command: "crie um novo documento de texto", label: 2 },
+    { command: "envie uma mensagem para Ana", label: 2 },
+    { command: "abra o aplicativo de notas", label: 2 },
+    { command: "faça uma ligação para o João", label: 2 },
+    { command: "crie um evento no calendário para sexta-feira", label: 2 },
+    { command: "mostre as notícias do dia", label: 2 },
+    { command: "leia um livro para mim", label: 2 },
+    { command: "abra o Google Drive", label: 2 },
+    { command: "traduza este texto para inglês", label: 2 },
+    { command: "reproduza um podcast sobre tecnologia", label: 2 },
+    { command: "verifique se há atualizações do sistema", label: 2 },
+    { command: "atualize meu status no LinkedIn", label: 2 },
+    { command: "faça uma reserva em um restaurante italiano", label: 2 },
+    { command: "ajuste o brilho da tela para 50%", label: 2 },
+    { command: "quero que voce abra a calculadora e calcule 25 dividido por 9", label: 2 },
+    { command: "defina uma música como toque de chamada", label: 2 },
+    { command: "mostre a cotação do dólar para hoje", label: 2 },
+    { command: "agende uma reunião para amanhã às 10h", label: 2 },
+    { command: "ajuste o volume do sistema para 70%", label: 2 },
+    { command: "compartilhe um arquivo no Google Drive", label: 2 },
+    { command: "quero a abertura do aplicativo de receitas", label: 2 },
+    { command: "quero um chá quente agora", label: 2 }
 
 ];
 
 // Função para converter comandos em vetores numéricos
 function encodeCommand(command, maxLength) {
     const charCodes = command.split('').map(char => char.charCodeAt(0) / 255);
-    // console.log(maxLength);
     if (maxLength <= 0) {
         throw new Error("maxLength deve ser um número positivo");
     }
@@ -101,7 +145,7 @@ function huberLoss(predicted, actual, delta = 1.0) {
 // Inicializar os parâmetros da rede neural
 const inputSize = Math.max(...trainingData.map(d => d.command.length));
 const hiddenSize = 10;  // Definindo a quantidade de neurônios na camada oculta
-const outputSize = 5;  // Agora temos 4 classes diferentes
+const outputSize = 3;  // Agora temos 3 classes diferentes
 
 // Inicialização dos pesos com valores aleatórios
 let weightsInputHidden = Array.from({ length: inputSize * hiddenSize }, () => Math.random());
@@ -137,7 +181,7 @@ function predict(inputVector) {
 }
 
 // Função para treinar a rede neural
-function train(trainingData, epochs = 70000, learningRate = 0.03, delta = 1.5) {
+function train(trainingData, epochs = 70000, learningRate = 0.02, delta = 1) {
     const maxLength = inputSize;  // Tamanho fixo das entradas
 
     for (let epoch = 0; epoch < epochs; epoch++) {
@@ -210,7 +254,6 @@ function train(trainingData, epochs = 70000, learningRate = 0.03, delta = 1.5) {
     }
 }
 
-
 // Treinando a rede neural
 train(trainingData);
 
@@ -222,14 +265,12 @@ function classifyCommand(testCommand) {
 
     // Pega o índice da maior probabilidade prevista
     const predictedLabel = prediction.indexOf(Math.max(...prediction));
-    // console.log(predictedLabel);
 
     // Retorna o rótulo baseado na previsão
     switch (predictedLabel) {
         case 0: return 'Clima';
         case 1: return 'Música';
-        case 2: return 'Luz (Ligar)';
-        case 3: return 'Luz (Desligar)';
+        case 2: return 'Outros';
         default: return 'Comando desconhecido';
     }
 }
@@ -239,12 +280,16 @@ function classifyCommand(testCommand) {
 const commands = [
     "faça uma pesquisa na europa",
     "tocar a banda acdc",
-    "tocar a musica thundersturck",
+    "quero ouvir a musica thundersturck",
+    "tocar a musica dont stop beliven",
+    "tocar a musica black in black",
+    "som na faixa com a musica black in black",
     "colocar a playlist de guardioes da galaxia",
     "som na faixa com a playlist de guardioes da galaxia",
     "como o tempo esta hoje?",
     "como esta o tempo?",
     "qual a previsão do tempo ",
+    "qual a previsão para hoje",
     "qual a previsão do tempo para hoje",
     "acender a luz",
     "acender as luzes",
@@ -253,6 +298,7 @@ const commands = [
     "fazer pesquisa se como fazer um pão",
     "quero um chá quente agora",
     "como eu faço para construir uma rede neural em javascript",
+    "faça uma lasanha para eu comer por favor",
 ]
 
 commands.map(command => {
