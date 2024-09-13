@@ -8,6 +8,7 @@ const server = http.createServer(app);
 const controller = new AssistantController()
 
 app.use(cors())
+app.use(express.json())
 
 app.get('/api/ia/music', async (req, res) => {
     const { music } = req.query;
@@ -19,6 +20,14 @@ app.get('/api/ia/music', async (req, res) => {
     res.end("musica inválida")
 });
 
-server.listen(process.env.PORT || 3000,()=>{
+app.post("/api/ia/command", (req, res) => {
+    const { query } = req.body;
+    const result = controller.getCommand(query);
+    res.write(result);
+    res.end();
+})
+
+
+server.listen(process.env.PORT || 3000, () => {
     console.log(`server is running at port ${server.address().port}`);
 })

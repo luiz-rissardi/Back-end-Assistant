@@ -181,7 +181,7 @@ function predict(inputVector) {
 }
 
 // Função para treinar a rede neural
-function train(trainingData, epochs = 70000, learningRate = 0.02, delta = 1) {
+function train(trainingData, epochs = 80000, learningRate = 0.02, delta = 1) {
     const maxLength = inputSize;  // Tamanho fixo das entradas
 
     for (let epoch = 0; epoch < epochs; epoch++) {
@@ -258,7 +258,7 @@ function train(trainingData, epochs = 70000, learningRate = 0.02, delta = 1) {
 train(trainingData);
 
 // Testando a rede neural com um comando
-function classifyCommand(testCommand) {
+export function classifyCommand(testCommand) {
     const encodedTestCommand = encodeCommand(testCommand, inputSize);
     const prediction = predict(encodedTestCommand);
     // console.log(prediction);
@@ -277,31 +277,31 @@ function classifyCommand(testCommand) {
 
 // Exemplo de teste
 
-const commands = [
-    "faça uma pesquisa na europa",
-    "tocar a banda acdc",
-    "quero ouvir a musica thundersturck",
-    "tocar a musica dont stop beliven",
-    "tocar a musica black in black",
-    "som na faixa com a musica black in black",
-    "colocar a playlist de guardioes da galaxia",
-    "som na faixa com a playlist de guardioes da galaxia",
-    "como o tempo esta hoje?",
-    "como esta o tempo?",
-    "qual a previsão do tempo ",
-    "qual a previsão para hoje",
-    "qual a previsão do tempo para hoje",
-    "acender a luz",
-    "acender as luzes",
-    "apagar as luzes",
-    "apagar as luzes",
-    "fazer pesquisa se como fazer um pão",
-    "quero um chá quente agora",
-    "como eu faço para construir uma rede neural em javascript",
-    "faça uma lasanha para eu comer por favor",
-]
+// const commands = [
+//     "faça uma pesquisa na europa",
+//     "tocar a banda acdc",
+//     "quero ouvir a musica thundersturck",
+//     "tocar a musica dont stop beliven",
+//     "tocar a musica black in black",
+//     "som na faixa com a musica black in black",
+//     "colocar a playlist de guardioes da galaxia",
+//     "som na faixa com a playlist de guardioes da galaxia",
+//     "como o tempo esta hoje?",
+//     "como esta o tempo?",
+//     "qual a previsão do tempo ",
+//     "qual a previsão para hoje",
+//     "qual a previsão do tempo para hoje",
+//     "acender a luz",
+//     "acender as luzes",
+//     "apagar as luzes",
+//     "apagar as luzes",
+//     "fazer pesquisa se como fazer um pão",
+//     "quero um chá quente agora",
+//     "como eu faço para construir uma rede neural em javascript",
+//     "faça uma lasanha para eu comer por favor",
+// ]
 
-commands.map(command => {
-    const result = classifyCommand(command);
-    console.log(`O comando "${command}" foi classificado como: ${result}`);
-})
+// commands.map(command => {
+//     const result = classifyCommand(command);
+//     console.log(`O comando "${command}" foi classificado como: ${result}`);
+// })

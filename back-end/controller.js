@@ -1,5 +1,6 @@
 import YTMusic from "ytmusic-api";
 import { GenerativeModel } from "@google/generative-ai";
+import { classifyCommand } from "./ia2.js";
 
 export class AssistantController {
 
@@ -28,8 +29,13 @@ export class AssistantController {
         return songs
     }
 
-    async getCommand() {
-
+    getCommand(query) {
+        try {
+            return classifyCommand(query);
+        } catch (error) {
+            console.log(error);
+            return "Desculpe, algo deu errado internamente"
+        }
     }
 
     async #getResponse(input) {
